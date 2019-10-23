@@ -13,6 +13,11 @@ pages:
 extra:
   search:
     language: 'en, ja'
+  social:
+    - type: github
+      link: https://github.com/ak1ra24
+    - type: twitter
+      link: https://twitter.com/akiranet2580
 
 extra_css:
     - "//fonts.googleapis.com/earlyaccess/notosansjp.css"
