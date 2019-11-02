@@ -9,6 +9,7 @@ pages:
     - 'linux.md'
     - 'terraform.md'
     - 'howtowrite.md'
+    - 'mkdocs.md'
 
 extra:
   search:
