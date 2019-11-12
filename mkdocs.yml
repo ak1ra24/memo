@@ -4,6 +4,7 @@ theme:
   name: 'material'
 
 pages:
+    - 'index.md'
     - 'server.md'
     - 'docker.md'
     - 'linux.md'
@@ -33,7 +34,7 @@ markdown_extensions:
     - codehilite:
         use_pygments: true
         noclasses: true
-        pygments_style: monokai
+        pygments_style: vim
     - pymdownx.details
     - pymdownx.magiclink
     - pymdownx.mark
