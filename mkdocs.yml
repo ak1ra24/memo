@@ -4,12 +4,12 @@ theme:
   name: 'material'
 
 pages:
-    - 'index.md'
+    - 'server.md'
     - 'docker.md'
     - 'linux.md'
     - 'terraform.md'
     - 'howtowrite.md'
-    - 'mkdocs.md'
+    - 'docs.md'
 
 extra:
   search:
