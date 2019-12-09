@@ -13,10 +13,10 @@ jobs:
       uses: actions/checkout@master
 
     - name: Set up Python 3.7
-        uses: actions/setup-python@v1
-        with:
-          version: '3.7'
-          architecture: 'x64'
+      uses: actions/setup-python@v1
+      with:
+        version: '3.7'
+        architecture: 'x64'
 
     - name: Install Dependencies
       run: pip install -r requirements.txt
