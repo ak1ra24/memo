@@ -1,0 +1,946 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en, ja">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+    
+    
+      
+        <title>Server - ak1ra Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.30686662.css">
+      
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#server" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="ak1ra Docs" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              ak1ra Docs
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Server
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href=".." title="ak1ra Docs" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    ak1ra Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Server
+      </label>
+    
+    <a href="./" title="Server" class="md-nav__link md-nav__link--active">
+      Server
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#grafanaloki" class="md-nav__link">
+    GrafanaLoki
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-loki-promtail" class="md-nav__link">
+    Install (Loki + Promtail)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    参考
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sflow-rt-vizceral" class="md-nav__link">
+    sflow-rt + Vizceral
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sflow-rt" class="md-nav__link">
+    sflow-rt
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hsflowd" class="md-nav__link">
+    hsflowd
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vizceral" class="md-nav__link">
+    Vizceral
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#freeipa" class="md-nav__link">
+    freeipa
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../docker/" title="Docker" class="md-nav__link">
+      Docker
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../linux/" title="Linux" class="md-nav__link">
+      Linux
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../terraform/" title="Terraform" class="md-nav__link">
+      Terraform
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../howtowrite/" title="How to write mkdocs" class="md-nav__link">
+      How to write mkdocs
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../docs/" title="Docs" class="md-nav__link">
+      Docs
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#grafanaloki" class="md-nav__link">
+    GrafanaLoki
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-loki-promtail" class="md-nav__link">
+    Install (Loki + Promtail)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    参考
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sflow-rt-vizceral" class="md-nav__link">
+    sflow-rt + Vizceral
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sflow-rt" class="md-nav__link">
+    sflow-rt
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hsflowd" class="md-nav__link">
+    hsflowd
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vizceral" class="md-nav__link">
+    Vizceral
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#freeipa" class="md-nav__link">
+    freeipa
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="server">Server</h1>
+<h2 id="grafanaloki">GrafanaLoki</h2>
+<p><img alt="architecture" src="https://d2l930y2yx77uc.cloudfront.net/production/uploads/images/12998465/picture_pc_e512d6bbc17a1038e4ff0f264b9704bc.png" /></p>
+<ul>
+<li>Grafana Loki</li>
+<li>Logを収集する</li>
+<li>Promtail</li>
+<li>Agent</li>
+<li>Lokiに対してログを転送</li>
+<li>Grafana</li>
+<li>データを可視化</li>
+</ul>
+<h3 id="install-loki-promtail">Install (Loki + Promtail)</h3>
+<ul>
+<li>Grafana Loki</li>
+</ul>
+<div class="codehilite" style="background: #000000"><pre style="line-height: 125%"><span></span><span style="color: #cccccc">curl</span> <span style="color: #3399cc">-</span><span style="color: #cccccc">fSL</span> <span style="color: #3399cc">-</span><span style="color: #cccccc">o</span> <span style="color: #cd0000">&quot;/usr/local/bin/loki.gz&quot;</span> <span style="color: #cd0000">&quot;https://github.com/grafana/loki/releases/download/v0.4.0/loki-linux-amd64.gz&quot;</span>
+<span style="color: #cccccc">gunzip</span> <span style="color: #cd0000">&quot;/usr/local/bin/loki.gz&quot;</span>
+<span style="color: #cccccc">chmod</span> <span style="color: #cccccc">a</span><span style="color: #3399cc">+</span><span style="color: #cccccc">x</span> <span style="color: #cd0000">&quot;/usr/local/bin/loki&quot;</span>
+</pre></div>
+
+
+<ul>
+<li><code>/etc/loki/loki-config.yaml</code></li>
+</ul>
+<div class="codehilite" style="background: #000000"><pre style="line-height: 125%"><span></span><span style="color: #cccccc">auth_enabled</span><span style="color: #3399cc">:</span> <span style="color: #cdcd00">false</span>
+<span style="color: #cccccc">server</span><span style="color: #3399cc">:</span>
+<span style="color: #cccccc">http_listen_port</span><span style="color: #3399cc">:</span> <span style="color: #cd00cd">3100</span>
+<span style="color: #cccccc">ingester</span><span style="color: #3399cc">:</span>
+<span style="color: #cccccc">lifecycler</span><span style="color: #3399cc">:</span>
+    <span style="color: #cccccc">address</span><span style="color: #3399cc">:</span> <span style="color: #cd00cd">127.0</span><span style="color: #3399cc">.</span><span style="color: #cd00cd">0.1</span>
+    <span style="color: #cccccc">ring</span><span style="color: #3399cc">:</span>
+    <span style="color: #cccccc">kvstore</span><span style="color: #3399cc">:</span>
+        <span style="color: #cccccc">store</span><span style="color: #3399cc">:</span> <span style="color: #cccccc">inmemory</span>
+    <span style="color: #cccccc">replication_factor</span><span style="color: #3399cc">:</span> <span style="color: #cd00cd">1</span>
+    <span style="color: #cccccc">final_sleep</span><span style="color: #3399cc">:</span> <span style="color: #cd00cd">0</span><span style="color: #cccccc">s</span>
+<span style="color: #cccccc">chunk_idle_period</span><span style="color: #3399cc">:</span> <span style="color: #cd00cd">5</span><span style="color: #cccccc">m</span>
+<span style="color: #cccccc">chunk_retain_period</span><span style="color: #3399cc">:</span> <span style="color: #cd00cd">30</span><span style="color: #cccccc">s</span>
+<span style="color: #cccccc">schema_config</span><span style="color: #3399cc">:</span>
+<span style="color: #cccccc">configs</span><span style="color: #3399cc">:</span>
+<span style="color: #3399cc">-</span> <span style="color: #cccccc">from</span><span style="color: #3399cc">:</span> <span style="color: #cd00cd">2019</span><span style="color: #3399cc">-</span><span style="color: #cd00cd">10</span><span style="color: #3399cc">-</span><span style="color: #cd00cd">30</span>
+    <span style="color: #cccccc">store</span><span style="color: #3399cc">:</span> <span style="color: #cccccc">boltdb</span>
+    <span style="color: #cccccc">object_store</span><span style="color: #3399cc">:</span> <span style="color: #cccccc">filesystem</span>
+    <span style="color: #cccccc">schema</span><span style="color: #3399cc">:</span> <span style="color: #cccccc">v9</span>
+    <span style="color: #cccccc">index</span><span style="color: #3399cc">:</span>
+    <span style="color: #cccccc">prefix</span><span style="color: #3399cc">:</span> <span style="color: #cccccc">index_</span>
+    <span style="color: #cccccc">period</span><span style="color: #3399cc">:</span> <span style="color: #cd00cd">168</span><span style="color: #cccccc">h</span>
+<span style="color: #cccccc">storage_config</span><span style="color: #3399cc">:</span>
+<span style="color: #cccccc">boltdb</span><span style="color: #3399cc">:</span>
+    <span style="color: #cccccc">directory</span><span style="color: #3399cc">:</span> <span style="color: #cd0000">/tmp/loki/i</span><span style="color: #cccccc">ndex</span>
+<span style="color: #cccccc">filesystem</span><span style="color: #3399cc">:</span>
+    <span style="color: #cccccc">directory</span><span style="color: #3399cc">:</span> <span style="color: #cd0000">/tmp/loki/</span><span style="color: #cccccc">chunks</span>
+<span style="color: #cccccc">limits_config</span><span style="color: #3399cc">:</span>
+<span style="color: #cccccc">enforce_metric_name</span><span style="color: #3399cc">:</span> <span style="color: #cdcd00">false</span>
+<span style="color: #cccccc">reject_old_samples</span><span style="color: #3399cc">:</span> <span style="color: #cdcd00">true</span>
+<span style="color: #cccccc">reject_old_samples_max_age</span><span style="color: #3399cc">:</span> <span style="color: #cd00cd">168</span><span style="color: #cccccc">h</span>
+<span style="color: #cccccc">chunk_store_config</span><span style="color: #3399cc">:</span>
+<span style="color: #cccccc">max_look_back_period</span><span style="color: #3399cc">:</span> <span style="color: #cd00cd">0</span>
+<span style="color: #cccccc">table_manager</span><span style="color: #3399cc">:</span>
+<span style="color: #cccccc">chunk_tables_provisioning</span><span style="color: #3399cc">:</span>
+    <span style="color: #cccccc">inactive_read_throughput</span><span style="color: #3399cc">:</span> <span style="color: #cd00cd">0</span>
+    <span style="color: #cccccc">inactive_write_throughput</span><span style="color: #3399cc">:</span> <span style="color: #cd00cd">0</span>
+    <span style="color: #cccccc">provisioned_read_throughput</span><span style="color: #3399cc">:</span> <span style="color: #cd00cd">0</span>
+    <span style="color: #cccccc">provisioned_write_throughput</span><span style="color: #3399cc">:</span> <span style="color: #cd00cd">0</span>
+<span style="color: #cccccc">index_tables_provisioning</span><span style="color: #3399cc">:</span>
+    <span style="color: #cccccc">inactive_read_throughput</span><span style="color: #3399cc">:</span> <span style="color: #cd00cd">0</span>
+    <span style="color: #cccccc">inactive_write_throughput</span><span style="color: #3399cc">:</span> <span style="color: #cd00cd">0</span>
+    <span style="color: #cccccc">provisioned_read_throughput</span><span style="color: #3399cc">:</span> <span style="color: #cd00cd">0</span>
+    <span style="color: #cccccc">provisioned_write_throughput</span><span style="color: #3399cc">:</span> <span style="color: #cd00cd">0</span>
+<span style="color: #cccccc">retention_deletes_enabled</span><span style="color: #3399cc">:</span> <span style="color: #cdcd00">false</span>
+<span style="color: #cccccc">retention_period</span><span style="color: #3399cc">:</span> <span style="color: #cd00cd">0</span>
+</pre></div>
+
+
+<ul>
+<li>protail(ansibleでインストール)<ul>
+<li><code>roles/promtail/tasks/main.yml</code></li>
+</ul>
+</li>
+</ul>
+<div class="codehilite" style="background: #000000"><pre style="line-height: 125%"><span></span><span style="color: #3399cc">-</span> <span style="color: #00cdcd">name</span>: <span style="color: #00cdcd">Download</span> <span style="color: #00cdcd">promtail</span> <span style="color: #00cdcd">binary</span> <span style="color: #00cdcd">tlocal</span> <span style="color: #00cdcd">folder</span>
+  <span style="color: #00cdcd">get_url</span>:
+    <span style="color: #00cdcd">url</span>: <span style="color: #cd0000">&quot;https://github.com/grafana/loki/releases/download/v{{ promtail_version }}/promtail-linux-amd64.gz&quot;</span>
+    <span style="color: #00cdcd">dest</span>: <span style="color: #cd0000">&quot;/usr/local/bin/promtail.gz&quot;</span>
+  <span style="color: #00cdcd">retries</span>: <span style="color: #cd00cd">5</span>
+  <span style="color: #00cdcd">delay</span>: <span style="color: #cd00cd">2</span>
+  <span style="color: #00cdcd">when</span>: <span style="color: #00cdcd">ansible_architecture</span> <span style="color: #3399cc">=</span><span style="color: #cd0000">&quot;x86_64&quot;</span>
+
+<span style="color: #3399cc">-</span> <span style="color: #00cdcd">name</span>: <span style="color: #00cdcd">Download</span> <span style="color: #00cdcd">node_exportebinary</span> <span style="color: #00cdcd">to</span> <span style="color: #00cdcd">local</span> <span style="color: #00cdcd">folder</span> <span style="color: #cdcd00">for</span> <span style="color: #00cdcd">armv7</span>
+  <span style="color: #00cdcd">get_url</span>:
+    <span style="color: #00cdcd">url</span>: <span style="color: #cd0000">&quot;https://github.com/grafana/loki/releases/download/v{{ promtail_version }}/promtail-linux-arm64.gz&quot;</span>
+    <span style="color: #00cdcd">dest</span>: <span style="color: #cd0000">&quot;/usr/local/bin/promtail.gz&quot;</span>
+  <span style="color: #00cdcd">retries</span>: <span style="color: #cd00cd">5</span>
+  <span style="color: #00cdcd">delay</span>: <span style="color: #cd00cd">2</span>
+  <span style="color: #00cdcd">when</span>: <span style="color: #00cdcd">ansible_architecture</span> <span style="color: #3399cc">=</span><span style="color: #cd0000">&quot;armv7l&quot;</span>
+
+<span style="color: #3399cc">-</span> <span style="color: #00cdcd">name</span>: <span style="color: #00cdcd">check</span> <span style="color: #00cdcd">promtail</span>
+  <span style="color: #00cdcd">stat</span>:
+    <span style="color: #00cdcd">path</span>: <span style="color: #3399cc">/</span><span style="color: #00cdcd">usr</span><span style="color: #3399cc">/</span><span style="color: #00cdcd">local</span><span style="color: #3399cc">/</span><span style="color: #00cdcd">bin</span><span style="color: #3399cc">/</span><span style="color: #00cdcd">promtail</span>
+  <span style="color: #00cdcd">register</span>: <span style="color: #00cdcd">promtail_file</span>
+
+<span style="color: #3399cc">-</span> <span style="color: #00cdcd">name</span>: <span style="color: #00cdcd">Unpack</span> <span style="color: #00cdcd">promtail</span> <span style="color: #00cdcd">binary</span>
+  <span style="color: #00cdcd">shell</span>: <span style="color: #00cdcd">gunzip</span> <span style="color: #3399cc">/</span><span style="color: #00cdcd">usr</span><span style="color: #3399cc">/</span><span style="color: #00cdcd">local</span><span style="color: #3399cc">/</span><span style="color: #00cdcd">bipromtail</span>.<span style="color: #00cdcd">gz</span>
+  <span style="color: #00cdcd">when</span>:
+    <span style="color: #3399cc">-</span> <span style="color: #00cdcd">not</span> <span style="color: #00cdcd">promtail_file</span>.<span style="color: #00cdcd">stat</span>.<span style="color: #00cdcd">exists</span>
+
+<span style="color: #3399cc">-</span> <span style="color: #00cdcd">name</span>: <span style="color: #00cdcd">change</span> <span style="color: #00cdcd">promtail</span> <span style="color: #00cdcd">mode</span>
+  <span style="color: #00cdcd">file</span>:
+    <span style="color: #00cdcd">path</span>: <span style="color: #3399cc">/</span><span style="color: #00cdcd">usr</span><span style="color: #3399cc">/</span><span style="color: #00cdcd">local</span><span style="color: #3399cc">/</span><span style="color: #00cdcd">bin</span><span style="color: #3399cc">/</span><span style="color: #00cdcd">promtail</span>
+    <span style="color: #00cdcd">owner</span>: <span style="color: #00cdcd">root</span>
+    <span style="color: #00cdcd">group</span>: <span style="color: #00cdcd">root</span>
+    <span style="color: #00cdcd">mode</span>: <span style="color: #cd00cd">0755</span>
+  <span style="color: #00cdcd">when</span>:
+    <span style="color: #3399cc">-</span> <span style="color: #00cdcd">not</span> <span style="color: #00cdcd">promtail_file</span>.<span style="color: #00cdcd">stat</span>.<span style="color: #00cdcd">exists</span>
+
+<span style="color: #3399cc">-</span> <span style="color: #00cdcd">name</span>: <span style="color: #00cdcd">Copy</span> <span style="color: #00cdcd">the</span> <span style="color: #00cdcd">promtail</span> <span style="color: #00cdcd">systemservice</span> <span style="color: #00cdcd">file</span>
+  <span style="color: #00cdcd">copy</span>:
+    <span style="color: #00cdcd">src</span>: <span style="color: #00cdcd">promtail</span>.<span style="color: #00cdcd">service</span>
+    <span style="color: #00cdcd">dest</span>: <span style="color: #3399cc">/</span><span style="color: #00cdcd">etc</span><span style="color: #3399cc">/</span><span style="color: #00cdcd">systemd</span><span style="color: #3399cc">/</span><span style="color: #00cdcd">system</span><span style="color: #3399cc">/</span><span style="color: #00cdcd">promtail</span>.<span style="color: #00cdcd">service</span>
+    <span style="color: #00cdcd">owner</span>: <span style="color: #00cdcd">root</span>
+    <span style="color: #00cdcd">group</span>: <span style="color: #00cdcd">root</span>
+    <span style="color: #00cdcd">mode</span>: <span style="color: #cd00cd">0644</span>
+
+<span style="color: #3399cc">-</span> <span style="color: #00cdcd">name</span>: <span style="color: #00cdcd">Create</span> <span style="color: #3399cc">/</span><span style="color: #00cdcd">etc</span><span style="color: #3399cc">/</span><span style="color: #00cdcd">promtail</span>
+  <span style="color: #00cdcd">file</span>:
+    <span style="color: #00cdcd">path</span>: <span style="color: #3399cc">/</span><span style="color: #00cdcd">etc</span><span style="color: #3399cc">/</span><span style="color: #00cdcd">promtail</span>
+    <span style="color: #00cdcd">state</span>: <span style="color: #00cdcd">directory</span>
+    <span style="color: #00cdcd">mode</span>: <span style="color: #cd00cd">0755</span>
+
+<span style="color: #3399cc">-</span> <span style="color: #00cdcd">name</span>: <span style="color: #00cdcd">Copy</span> <span style="color: #00cdcd">the</span> <span style="color: #00cdcd">promtail</span> <span style="color: #00cdcd">confifile</span>
+  <span style="color: #00cdcd">copy</span>:
+    <span style="color: #00cdcd">src</span>: <span style="color: #00cdcd">promtail</span><span style="color: #3399cc">-</span><span style="color: #00cdcd">config</span>.<span style="color: #00cdcd">yaml</span>
+    <span style="color: #00cdcd">dest</span>: <span style="color: #3399cc">/</span><span style="color: #00cdcd">etc</span><span style="color: #3399cc">/</span><span style="color: #00cdcd">promtail</span><span style="color: #3399cc">/</span><span style="color: #00cdcd">promtail</span><span style="color: #3399cc">-</span><span style="color: #00cdcd">config</span>.<span style="color: #00cdcd">yaml</span>
+    <span style="color: #00cdcd">owner</span>: <span style="color: #00cdcd">root</span>
+    <span style="color: #00cdcd">group</span>: <span style="color: #00cdcd">root</span>
+    <span style="color: #00cdcd">mode</span>: <span style="color: #cd00cd">0644</span>
+
+<span style="color: #3399cc">-</span> <span style="color: #00cdcd">name</span>: <span style="color: #00cdcd">replace</span>    <span style="color: #00cdcd">ipaddresnode_exporter</span>.<span style="color: #00cdcd">service</span>
+  <span style="color: #00cdcd">replace</span>:
+    <span style="color: #00cdcd">path</span>: <span style="color: #3399cc">/</span><span style="color: #00cdcd">etc</span><span style="color: #3399cc">/</span><span style="color: #00cdcd">promtail</span><span style="color: #3399cc">/</span><span style="color: #00cdcd">promtail</span><span style="color: #3399cc">-</span><span style="color: #00cdcd">config</span>.<span style="color: #00cdcd">yaml</span>
+    <span style="color: #00cdcd">regexp</span>: <span style="color: #cd0000">&#39;hostname: hostname&#39;</span>
+    <span style="color: #00cdcd">replace</span>: <span style="color: #cd0000">&#39;hostname: {{ansible_hostname}}&#39;</span>
+
+<span style="color: #3399cc">-</span> <span style="color: #00cdcd">name</span>: <span style="color: #00cdcd">Enable</span> <span style="color: #00cdcd">my</span> <span style="color: #00cdcd">service</span>
+  <span style="color: #00cdcd">systemd</span>:
+    <span style="color: #00cdcd">name</span>: <span style="color: #00cdcd">promtail</span>.<span style="color: #00cdcd">service</span>
+    <span style="color: #00cdcd">enabled</span>: <span style="color: #00cdcd">yes</span>
+    <span style="color: #00cdcd">state</span>: <span style="color: #00cdcd">restarted</span>
+    <span style="color: #00cdcd">daemon_reload</span>: <span style="color: #00cdcd">yes</span>
+</pre></div>
+
+
+<ul>
+<li><code>promtail-config.yaml</code><ul>
+<li>hostnameを追加することで、hostごとのlogをフィルターできる</li>
+</ul>
+</li>
+</ul>
+<div class="codehilite" style="background: #000000"><pre style="line-height: 125%"><span></span><span style="color: #cccccc">server</span><span style="color: #3399cc">:</span>
+<span style="color: #cccccc">http_listen_port</span><span style="color: #3399cc">:</span> <span style="color: #cd00cd">9080</span>
+<span style="color: #cccccc">grpc_listen_port</span><span style="color: #3399cc">:</span> <span style="color: #cd00cd">0</span>
+
+<span style="color: #cccccc">positions</span><span style="color: #3399cc">:</span>
+<span style="color: #cccccc">filename</span><span style="color: #3399cc">:</span> <span style="color: #cd0000">/tmp/</span><span style="color: #cccccc">positions</span><span style="color: #3399cc">.</span><span style="color: #cccccc">yaml</span>
+
+<span style="color: #cccccc">clients</span><span style="color: #3399cc">:</span>
+<span style="color: #3399cc">-</span> <span style="color: #cccccc">url</span><span style="color: #3399cc">:</span> <span style="color: #cccccc">http</span><span style="color: #3399cc">:</span><span style="color: #cccccc">monitor</span><span style="color: #3399cc">.</span><span style="color: #cccccc">node</span><span style="color: #3399cc">.</span><span style="color: #cccccc">kanai</span><span style="color: #3399cc">.</span><span style="color: #cccccc">lab</span><span style="color: #3399cc">:</span><span style="color: #cd00cd">3100</span><span style="color: #cd0000">/lokapi/v1/</span><span style="color: #cccccc">push</span>
+
+<span style="color: #cccccc">scrape_configs</span><span style="color: #3399cc">:</span>
+<span style="color: #3399cc">-</span> <span style="color: #cccccc">job_name</span><span style="color: #3399cc">:</span> <span style="color: #cccccc">system</span>
+<span style="color: #cccccc">static_configs</span><span style="color: #3399cc">:</span>
+<span style="color: #3399cc">-</span> <span style="color: #cccccc">targets</span><span style="color: #3399cc">:</span>
+    <span style="color: #3399cc">-</span> <span style="color: #cccccc">localhost</span>
+    <span style="color: #cccccc">labels</span><span style="color: #3399cc">:</span>
+    <span style="color: #cccccc">job</span><span style="color: #3399cc">:</span> <span style="color: #cccccc">varlogs</span>
+    <span style="color: #cccccc">__path__</span><span style="color: #3399cc">:</span> <span style="color: #cd0000">/var/log/</span><span style="color: #3399cc">*</span><span style="color: #cccccc">log</span>
+    <span style="color: #cccccc">hostname</span><span style="color: #3399cc">:</span> <span style="color: #cccccc">hostname</span>
+</pre></div>
+
+
+<ul>
+<li><code>promtail.service</code></li>
+</ul>
+<div class="codehilite" style="background: #000000"><pre style="line-height: 125%"><span></span><span style="color: #cdcd00">[Unit]</span>
+<span style="color: #cccccc">Description</span><span style="color: #3399cc">=</span><span style="color: #cd0000">promtail</span>
+
+<span style="color: #cdcd00">[Service]</span>
+<span style="color: #cccccc">Type</span><span style="color: #3399cc">=</span><span style="color: #cd0000">simple</span>
+<span style="color: #cccccc">ExecStart</span><span style="color: #3399cc">=</span><span style="color: #cd0000">/usr/local/bin/promtail \</span>
+<span style="color: #cd0000">    -config.file /etc/promtail/promtail-config.yaml</span>
+
+<span style="color: #cdcd00">[Install]</span>
+<span style="color: #cccccc">WantedBy</span><span style="color: #3399cc">=</span><span style="color: #cd0000">multi-user.target</span>
+</pre></div>
+
+
+<h3 id="_1">参考</h3>
+<p><a href="https://note.mu/_k_e_k_e/n/n9bcfa4ef9278">note</a></p>
+<p><a href="https://i101330.hatenablog.com/entry/2019/08/18/142339">promtail</a></p>
+<p><a href="https://github.com/grafana/loki">github loki</a></p>
+<h2 id="sflow-rt-vizceral">sflow-rt + Vizceral</h2>
+<h3 id="sflow-rt">sflow-rt</h3>
+<ul>
+<li>ネットワークデバイス、ホスト、およびアプリケーションに埋め込まれたsFlowエージェントからsflowの情報を集計し、監視系ソフトウェアはsflow-rtのREST APIを叩くことでsflowの値を監視できる
+  <img alt="sflow-rt" src="https://sflow-rt.com/img/rt-ecosystem.png" /></li>
+</ul>
+<h3 id="hsflowd">hsflowd</h3>
+<ul>
+<li>Host Sflow</li>
+<li>
+<p>sFlowプロトコルを使用して物理サーバーと仮想サーバーのパフォーマンスメトリックをエクスポート</p>
+</li>
+<li>
+<p>hsflowdをansibleで複数マシンをインストール (ubuntu 1804)</p>
+</li>
+<li><code>roles/sflow/tasks/main.yml</code></li>
+</ul>
+<div class="codehilite" style="background: #000000"><pre style="line-height: 125%"><span></span><span style="color: #cccccc">- name: Download hsflowd deb package</span>
+<span style="color: #cccccc">  get_url:</span>
+<span style="color: #cccccc">    url: &quot;https://github.com/sflow/host-sflow/releases/download/v</span><span style="color: #000080">{{</span> <span style="color: #00cdcd">hsflowd_version</span> <span style="color: #000080">}}</span><span style="color: #cccccc">/hsflowd-ubuntu18_</span><span style="color: #000080">{{</span> <span style="color: #00cdcd">hsflowd_version</span> <span style="color: #000080">}}</span><span style="color: #cccccc">_amd64.deb&quot;</span>
+<span style="color: #cccccc">    dest: &quot;/tmp/hsflowd.deb&quot;</span>
+<span style="color: #cccccc">    retries: 5</span>
+<span style="color: #cccccc">    delay: 2</span>
+
+<span style="color: #cccccc">    - name: Install hsflowd deb</span>
+<span style="color: #cccccc">    apt:</span>
+<span style="color: #cccccc">        deb: /tmp/hsflowd.deb</span>
+
+<span style="color: #cccccc">    - name: Copy the hsflowd config file</span>
+<span style="color: #cccccc">    copy:</span>
+<span style="color: #cccccc">        src: hsflowd.conf</span>
+<span style="color: #cccccc">        dest: /etc/hsflowd.conf</span>
+<span style="color: #cccccc">        owner: root</span>
+<span style="color: #cccccc">        group: root</span>
+<span style="color: #cccccc">        mode: 0644</span>
+
+<span style="color: #cccccc">    - name: Enable hsflowd service</span>
+<span style="color: #cccccc">      systemd:</span>
+<span style="color: #cccccc">        name: hsflowd.service</span>
+<span style="color: #cccccc">        enabled: yes</span>
+<span style="color: #cccccc">        state: restarted</span>
+<span style="color: #cccccc">        daemon_reload: yes</span>
+</pre></div>
+
+
+<ul>
+<li><code>/etc/hsflowd/hsflowd.conf</code></li>
+</ul>
+<div class="codehilite" style="background: #000000"><pre style="line-height: 125%"><span></span># <span style="color: #00cdcd">hsflowd</span> <span style="color: #00cdcd">configuration</span> <span style="color: #00cdcd">file</span>
+# <span style="color: #00cdcd">http</span>:<span style="color: #3399cc">//</span><span style="color: #00cdcd">sflow</span>.<span style="color: #00cdcd">nehost</span><span style="color: #3399cc">-</span><span style="color: #00cdcd">sflow</span><span style="color: #3399cc">-</span><span style="color: #00cdcd">linux</span><span style="color: #3399cc">-</span><span style="color: #00cdcd">config</span>.<span style="color: #00cdcd">php</span>
+
+<span style="color: #00cdcd">sflow</span> {
+# <span style="color: #3399cc">======</span>  <span style="color: #00cdcd">Agent</span> <span style="color: #00cdcd">IP</span> <span style="color: #00cdcd">selection</span> <span style="color: #3399cc">======</span>
+# <span style="color: #00cdcd">Selection</span> <span style="color: #00cdcd">is</span> <span style="color: #00cdcd">automatic</span>, <span style="color: #00cdcd">unless</span>:
+# <span style="color: #cd0000">(</span><span style="color: #cd00cd">1</span><span style="color: #cd0000">)</span> <span style="color: #00cdcd">override</span> <span style="color: #00cdcd">with</span> <span style="color: #00cdcd">preferred</span> <span style="color: #00cdcd">CIDR</span>:
+#   <span style="color: #00cdcd">agent</span>.<span style="color: #00cdcd">cidr</span> <span style="color: #3399cc">=</span> <span style="color: #cd00cd">192</span>.<span style="color: #cd00cd">168</span>.<span style="color: #cd00cd">0</span>.<span style="color: #cd00cd">0</span><span style="color: #3399cc">/</span><span style="color: #cd00cd">16</span>
+# <span style="color: #cd0000">(</span><span style="color: #cd00cd">2</span><span style="color: #cd0000">)</span> <span style="color: #00cdcd">Override</span> <span style="color: #00cdcd">with</span> <span style="color: #00cdcd">interface</span>:
+#   <span style="color: #00cdcd">agent</span> <span style="color: #3399cc">=</span> <span style="color: #00cdcd">eth0</span>
+
+# <span style="color: #3399cc">======</span> <span style="color: #00cdcd">Sampling</span><span style="color: #3399cc">/</span><span style="color: #00cdcd">PollinCollectors</span> <span style="color: #3399cc">======</span>
+# <span style="color: #00cdcd">EITHER</span>: <span style="color: #00cdcd">automatic</span> <span style="color: #cd0000">(</span><span style="color: #00cdcd">DNS</span> <span style="color: #00cdcd">SRV</span><span style="color: #3399cc">+</span><span style="color: #00cdcd">TXfrom</span> <span style="color: #00cdcd">_sflow</span>.<span style="color: #00cdcd">_udp</span><span style="color: #cd0000">)</span>:
+#   <span style="color: #00cdcd">DNS</span><span style="color: #3399cc">-</span><span style="color: #00cdcd">SD</span> { }
+  <span style="color: #00cdcd">DNSSD</span> <span style="color: #3399cc">=</span> <span style="color: #00cdcd">off</span>
+# <span style="color: #00cdcd">OR</span>: <span style="color: #00cdcd">manual</span>:
+#   <span style="color: #00cdcd">Counter</span> <span style="color: #00cdcd">Polling</span>:
+  <span style="color: #00cdcd">polling</span> <span style="color: #3399cc">=</span> <span style="color: #cd00cd">20</span>
+#   <span style="color: #00cdcd">default</span> <span style="color: #00cdcd">sampling</span> <span style="color: #00cdcd">N</span>:
+  <span style="color: #00cdcd">sampling</span> <span style="color: #3399cc">=</span> <span style="color: #cd00cd">400</span>
+#   <span style="color: #00cdcd">sampling</span> <span style="color: #00cdcd">N</span> <span style="color: #00cdcd">on</span> <span style="color: #00cdcd">interfaces</span> <span style="color: #00cdcd">witifSpeed</span>:
+#     <span style="color: #00cdcd">sampling</span>.<span style="color: #cd00cd">100</span><span style="color: #00cdcd">M</span> <span style="color: #3399cc">=</span> <span style="color: #cd00cd">100</span>
+#     <span style="color: #00cdcd">sampling</span>.<span style="color: #cd00cd">1</span><span style="color: #00cdcd">G</span> <span style="color: #3399cc">=</span> <span style="color: #cd00cd">1000</span>
+#     <span style="color: #00cdcd">sampling</span>.<span style="color: #cd00cd">10</span><span style="color: #00cdcd">G</span> <span style="color: #3399cc">=</span> <span style="color: #cd00cd">10000</span>
+#     <span style="color: #00cdcd">sampling</span>.<span style="color: #cd00cd">40</span><span style="color: #00cdcd">G</span> <span style="color: #3399cc">=</span> <span style="color: #cd00cd">40000</span>
+#   <span style="color: #00cdcd">sampling</span> <span style="color: #00cdcd">N</span> <span style="color: #cdcd00">for</span> <span style="color: #00cdcd">apache</span>, <span style="color: #00cdcd">nginx</span>:
+#     <span style="color: #00cdcd">sampling</span>.<span style="color: #00cdcd">http</span> <span style="color: #3399cc">=</span> <span style="color: #cd00cd">50</span>
+#   <span style="color: #00cdcd">sampling</span> <span style="color: #00cdcd">N</span> <span style="color: #cdcd00">for</span> <span style="color: #00cdcd">applicatio</span><span style="color: #cd0000">(</span><span style="color: #00cdcd">requires</span> <span style="color: #00cdcd">json</span><span style="color: #cd0000">)</span>:
+#     <span style="color: #00cdcd">sampling</span>.<span style="color: #00cdcd">app</span>.<span style="color: #00cdcd">myapp</span> <span style="color: #3399cc">=</span> <span style="color: #cd00cd">100</span>
+#   <span style="color: #00cdcd">collectors</span>:
+  <span style="color: #00cdcd">collector</span> { <span style="color: #00cdcd">ip</span><span style="color: #3399cc">=&lt;</span><span style="color: #00cdcd">sflow</span><span style="color: #3399cc">-</span><span style="color: #00cdcd">rt</span> <span style="color: #00cdcd">iaddress</span><span style="color: #3399cc">&gt;</span> <span style="color: #00cdcd">udpport</span><span style="color: #3399cc">=</span><span style="color: #cd00cd">6343</span> }
+#   <span style="color: #00cdcd">add</span> <span style="color: #00cdcd">additional</span> <span style="color: #00cdcd">collectors</span> <span style="color: #00cdcd">here</span>
+
+# <span style="color: #3399cc">======</span> <span style="color: #00cdcd">Local</span> <span style="color: #00cdcd">configuration</span> <span style="color: #3399cc">======</span>
+# <span style="color: #00cdcd">listen</span> <span style="color: #cdcd00">for</span> <span style="color: #00cdcd">JSON</span><span style="color: #3399cc">-</span><span style="color: #00cdcd">encoded</span> <span style="color: #00cdcd">input</span>:
+#   <span style="color: #00cdcd">json</span> { <span style="color: #00cdcd">UDPport</span> <span style="color: #3399cc">=</span> <span style="color: #cd00cd">36343</span> }
+# <span style="color: #00cdcd">PCAP</span><span style="color: #3399cc">+</span><span style="color: #00cdcd">BPF</span> <span style="color: #00cdcd">packet</span><span style="color: #3399cc">-</span><span style="color: #00cdcd">sampling</span>:
+#   <span style="color: #00cdcd">Bridge</span> <span style="color: #00cdcd">example</span>:
+#     <span style="color: #00cdcd">pcap</span> { <span style="color: #00cdcd">dev</span> <span style="color: #3399cc">=</span> <span style="color: #00cdcd">docker0</span> }
+#   <span style="color: #00cdcd">NIC</span> <span style="color: #00cdcd">example</span>:
+#     <span style="color: #00cdcd">pcap</span> { <span style="color: #00cdcd">dev</span> <span style="color: #3399cc">=</span> <span style="color: #00cdcd">eth0</span> }
+#     <span style="color: #00cdcd">pcap</span> { <span style="color: #00cdcd">dev</span> <span style="color: #3399cc">=</span> <span style="color: #00cdcd">eth1</span> }
+#   <span style="color: #00cdcd">All</span> <span style="color: #00cdcd">NICs</span> <span style="color: #00cdcd">example</span>:
+#     <span style="color: #00cdcd">pcap</span> { <span style="color: #00cdcd">speed</span><span style="color: #3399cc">=</span><span style="color: #cd00cd">1</span><span style="color: #00cdcd">G</span><span style="color: #3399cc">-</span><span style="color: #cd00cd">1</span><span style="color: #00cdcd">T</span> }
+  <span style="color: #00cdcd">pcap</span> { <span style="color: #00cdcd">speed</span><span style="color: #3399cc">=</span><span style="color: #cd00cd">1</span><span style="color: #3399cc">-</span> }
+# <span style="color: #00cdcd">NFLOG</span> <span style="color: #00cdcd">packet</span><span style="color: #3399cc">-</span><span style="color: #00cdcd">sampling</span>:
+#   <span style="color: #00cdcd">nflog</span> { <span style="color: #00cdcd">group</span> <span style="color: #3399cc">=</span> <span style="color: #cd00cd">5</span>  <span style="color: #00cdcd">probabilit</span><span style="color: #3399cc">=</span> <span style="color: #cd00cd">0</span>.<span style="color: #cd00cd">0025</span> }
+# <span style="color: #00cdcd">ULOG</span> <span style="color: #00cdcd">packet</span><span style="color: #3399cc">-</span><span style="color: #00cdcd">sampling</span>:
+#   <span style="color: #00cdcd">ulog</span> { <span style="color: #00cdcd">group</span> <span style="color: #3399cc">=</span> <span style="color: #cd00cd">1</span>  <span style="color: #00cdcd">probability</span> <span style="color: #cd00cd">0</span>.<span style="color: #cd00cd">0025</span> }
+# <span style="color: #00cdcd">PSAMPLE</span> <span style="color: #00cdcd">packet</span><span style="color: #3399cc">-</span><span style="color: #00cdcd">sampling</span>:
+#   <span style="color: #00cdcd">psample</span> { <span style="color: #00cdcd">group</span> <span style="color: #3399cc">=</span> <span style="color: #cd00cd">1</span> }
+# <span style="color: #00cdcd">Nvidia</span> <span style="color: #00cdcd">NVML</span> <span style="color: #00cdcd">GPU</span> <span style="color: #00cdcd">monitoring</span>:
+#   <span style="color: #00cdcd">nvml</span> { }
+# <span style="color: #00cdcd">Xen</span> <span style="color: #00cdcd">hypervisor</span> <span style="color: #00cdcd">and</span> <span style="color: #00cdcd">VM</span> <span style="color: #00cdcd">monitoring</span>:
+#   <span style="color: #00cdcd">xen</span> { }
+# <span style="color: #00cdcd">Open</span> <span style="color: #00cdcd">vSwitch</span> <span style="color: #00cdcd">sFlow</span> <span style="color: #00cdcd">configuration</span>:
+#   <span style="color: #00cdcd">ovs</span> { }
+# <span style="color: #00cdcd">KVM</span> <span style="color: #cd0000">(</span><span style="color: #00cdcd">libvirt</span><span style="color: #cd0000">)</span> <span style="color: #00cdcd">hypervisor</span> <span style="color: #00cdcd">and</span> <span style="color: #00cdcd">Vmonitoring</span>:
+#   <span style="color: #00cdcd">kvm</span> { }
+# <span style="color: #00cdcd">Docker</span> <span style="color: #00cdcd">container</span> <span style="color: #00cdcd">monitoring</span>:
+#   <span style="color: #00cdcd">docker</span> { }
+# <span style="color: #00cdcd">TCP</span> <span style="color: #00cdcd">round</span><span style="color: #3399cc">-</span><span style="color: #00cdcd">trip</span><span style="color: #3399cc">-</span><span style="color: #00cdcd">time</span><span style="color: #3399cc">/</span><span style="color: #00cdcd">loss</span><span style="color: #3399cc">/</span><span style="color: #00cdcd">jitte</span><span style="color: #cd0000">(</span><span style="color: #00cdcd">requires</span> <span style="color: #00cdcd">pcap</span><span style="color: #3399cc">/</span><span style="color: #00cdcd">nflog</span><span style="color: #3399cc">/</span><span style="color: #00cdcd">ulog</span><span style="color: #cd0000">)</span>
+  <span style="color: #00cdcd">tcp</span> { }
+# <span style="color: #00cdcd">monitoring</span> <span style="color: #00cdcd">of</span> <span style="color: #00cdcd">systemd</span> <span style="color: #00cdcd">cgroups</span>
+#   <span style="color: #00cdcd">systemd</span> { }
+# <span style="color: #00cdcd">DBUS</span> <span style="color: #00cdcd">agent</span>
+#   <span style="color: #00cdcd">dbus</span> { }
+# <span style="color: #00cdcd">Learn</span> <span style="color: #00cdcd">config</span> <span style="color: #00cdcd">from</span> <span style="color: #00cdcd">Arista</span> <span style="color: #00cdcd">EAPI</span>
+#   <span style="color: #00cdcd">eapi</span> { }
+}
+</pre></div>
+
+
+<h3 id="vizceral">Vizceral</h3>
+<ul>
+<li>Vizceral</li>
+<li>NetflixのOSS</li>
+<li>WebGL</li>
+<li>
+<p>webglキャンバスに交通データを表示するためのコンポーネントです</p>
+<ul>
+<li>トラフィック量に関するデータを含むノードとエッジのグラフが提供される場合、ノード間の接続量をアニメーション化するトラフィックグラフをレンダリングする
+<img alt="vizceral" src="https://github.com/Netflix/vizceral/raw/master/vizceral-example.png" /> </li>
+</ul>
+</li>
+<li>
+<p>sflow-rt + vizceral</p>
+</li>
+<li>
+<p>Netflix Vizceralを使用してリアルタイムのメトリックを表示するsFlow-RTアプリケーション</p>
+<p><img alt="sflowrt-vizceral" src="https://sflow-rt.com/img/vizceral-top.png" /></p>
+</li>
+<li>
+<p>ドットのストリームは、インターネットとの間のパケットフローを表す</p>
+<ul>
+<li>ドットの色はパケットタイプを表す</li>
+<li>tcp/udp: ブルー</li>
+<li>icmp: イエロー</li>
+<li>その他: レッド</li>
+</ul>
+</li>
+<li>
+<p>Docker</p>
+</li>
+<li><code>Makefile</code></li>
+</ul>
+<div class="codehilite" style="background: #000000"><pre style="line-height: 125%"><span></span><span style="color: #00cdcd">NAME</span><span style="color: #3399cc">=</span>sflow-rt docker
+<span style="color: #00cdcd">VERSION</span><span style="color: #3399cc">=</span><span style="color: #cd00cd">0</span>.0.1
+
+<span style="color: #cccccc">run</span><span style="color: #3399cc">:</span>
+    docker run --name sflow-rt --restart<span style="color: #3399cc">=</span>always -d -v <span style="color: #cdcd00">$(</span>PWD<span style="color: #cdcd00">)</span>/groups.json:/sflow-rt/store/vizceral~traffic.js/groups -p <span style="color: #cd00cd">6343</span>:6343/udp -p <span style="color: #cd00cd">8008</span>:8008 sflow/vizceral -Dviz.maxVolume<span style="color: #3399cc">=</span><span style="color: #cd00cd">100000</span>
+
+<span style="color: #cccccc">clean</span><span style="color: #3399cc">:</span>
+    docker rm -f sflow-rt
+</pre></div>
+
+
+<ul>
+<li><code>groups.json</code><ul>
+<li>ここにsflowのip addressの範囲を書いて監視できる</li>
+<li>vizceralの円のところを管理できる</li>
+</ul>
+</li>
+</ul>
+<div class="codehilite" style="background: #000000"><pre style="line-height: 125%"><span></span><span style="color: #cccccc; border: 1px solid #FF0000">{</span>
+    <span style="color: #cd0000">&quot;INTERNET&quot;</span><span style="color: #cccccc">:</span> <span style="color: #cccccc">[</span><span style="color: #cd0000">&quot;0.0.0.0/0&quot;</span><span style="color: #cccccc">],</span>
+    <span style="color: #cd0000">&quot;SiteA&quot;</span><span style="color: #cccccc">:</span> <span style="color: #cccccc">[</span><span style="color: #cd0000">&quot;10.0.0.0/16&quot;</span><span style="color: #cccccc">]</span>
+<span style="color: #cccccc; border: 1px solid #FF0000">}</span>
+</pre></div>
+
+
+<h2 id="freeipa">freeipa</h2>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href=".." title="Home" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Home
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../docker/" title="Docker" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Docker
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/ak1ra24" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/akiranet2580" class="md-footer-social__link fa fa-twitter"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.ac79c3b0.js"></script>
+      
+        
+        
+          
+          <script src="../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+          
+            
+              
+                <script src="../assets/javascripts/lunr/tinyseg.js"></script>
+              
+              
+                <script src="../assets/javascripts/lunr/lunr.ja.js"></script>
+              
+            
+          
+          
+            <script src="../assets/javascripts/lunr/lunr.multi.js"></script>
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+    
+  </body>
+</html>
