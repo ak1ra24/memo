@@ -1,8 +1,9 @@
 # k8s
 
-## v1.17を使用
+## k8s install
+**v1.17を使用**
 
-## install k8s dependencies
+### install k8s dependencies (ansible)
 ```
 - name: "install docker dependencies"
   apt:
@@ -74,7 +75,7 @@
   service: name=kubelet enabled=yes
 ```
 
-## warning: cgroupsfs
+### warning: cgroupsfs
 * /etc/docker/daemon.json
 ```
 {
@@ -92,7 +93,7 @@ sudo systemctl daemon-reload
 sudo systemctl restart docker
 ``` 
 
-## k8s setup
+### k8s setup
 ```
 # master
 kubeadm init --apiserver-advertise-address 172.16.0.11 --pod-network-cidr 10.244.0.0/16
@@ -100,6 +101,7 @@ kubeadm init --apiserver-advertise-address 172.16.0.11 --pod-network-cidr 10.244
 
 ## metallb bgp
 example:
+
 * master: 10.0.0.11
 * node01: 10.0.0.12
 * node02: 10.0.0.13
@@ -154,3 +156,52 @@ line vty
 !
 end
 ```
+
+## gitlabとの連携
+1. configure gitlab > kubernetesに移動し、`Add Kubernetes cluster`をクリック
+2. 設定値を入力
+* API URL
+  `APIURL=$(kubectl config view --minify | grep server | cut -f 2- -d ":" | tr -d " ")`
+* CA
+```
+$ kubectl get secrets
+NAME                  TYPE                                  DATA   AGE
+default-token-xxxxx   kubernetes.io/service-account-token   3      7h18m
+
+kubectl get secret default-token-xxxxx -o jsonpath="{['data']['ca\.crt']}" | base64 --decode
+```
+
+* Token
+  * `gitlab-admin.yaml`
+```
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: gitlab-admin
+  namespace: kube-system
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: gitlab-admin
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+  - kind: ServiceAccount
+    name: gitlab-admin
+    namespace: kube-system
+```
+
+```
+kubectl apply -f gitlab-admin.yaml
+kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep gitlab-admin | awk '{print $1}')
+```
+
+3. Helm Tillerインストールをクリック
+4. GitLab Runnerインストールをクリック
+
+
+refs
+[gitlab runner連携](https://qiita.com/khk-h/items/9e7a4a201654b588a493)
