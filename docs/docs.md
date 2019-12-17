@@ -38,25 +38,24 @@ deploy:
 ## pandoc + Markdown
 
 ### 環境構築
-WSL Ubuntu 18.04 + VSCODE
+Ubuntu 18.04 + VSCODE
 
 ```
 sudo apt update
-sudo apt install -y pandoc pandoc-citeproc
 ## Tex Packege
 sudo apt install texlive-luatex texlive-xetex texlive-lang-japanese -y
-sudo apt install texlive-lang-cjk xdvik-ja evince texlive-fonts-recommended texlive-fonts-extra -y
+sudo apt install texlive-lang-cjk
+xdvik-ja evince texlive-fonts-recommended texlive-fonts-extra lmodern texlive-xetex -y
 ## Haskell
-sudo apt install haskell-platform -y
-sudo apt install cabal-install -y
-sudo cabal update
-sudo cabal install --global pandoc-crossref
-
-## WSLのUbuntu18.04で行うと、フォントがないのか？エラーを吐いて、一向にうまくいかないため、Windowsのパス上で行う
-cd /mnt/c
-mkdir pandoc
-cd pandoc
-code . 
+curl -sSL https://get.haskellstack.org/ | sh
+## pandoc
+stack install pandoc
+stack install pandoc-citeproc
+## pandoc-crossrefはstack installだとエラーのため以下で行う
+git clone https://github.com/lierdakil/pandoc-crossref
+cd pandoc-crossref
+stack build --allow-different-user
+stack install --allow-different-user
 ```
 
 上記でVSCode上でmarkdownを編集して、pdfを生成できる
@@ -92,7 +91,7 @@ fi
 bibfiles=$(ls -F | grep bib)
 echo 'bib files: '$bibfiles
 
-pandoccmdtemplate='pandoc --pdf-engine=lualatex --toc -F pandoc-crossref -N -M "crossrefYaml=config.yml"'
+pandoccmdtemplate='pandoc --pdf-engine=lualatex --toc -F pandoc-crossref -N -M "crossrefYaml=config.yml" -V documentclass=ltjarticle'
 echo $pandoccmd
 pandoccmd=''
 for bib in ${bibfiles[@]}
@@ -130,3 +129,7 @@ echo Done
 ### 参考
 <https://qiita.com/Kumassy/items/5b6ae6b99df08fb434d9>
 <https://qiita.com/SOhtsu/items/e921142372d0f4cce410>
+<http://mickey-happygolucky.hatenablog.com/entry/2016/03/01/234228>
+<https://qiita.com/Kenta11/items/5844df1a6a1f5f3ba6d5#pandoc-crossref>
+<https://qiita.com/sky_y/items/3c5c46ebd319490907e8>
+<https://texwiki.texjp.org/?LuaTeX-ja#v06d4fe0>
