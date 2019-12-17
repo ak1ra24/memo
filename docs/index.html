@@ -246,6 +246,30 @@
       
       
 
+
+  <li class="md-nav__item">
+    <a href="../openvpn/" title="OpenVPN" class="md-nav__link">
+      OpenVPN
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../k8s/" title="k8s" class="md-nav__link">
+      k8s
+    </a>
+  </li>
+
+    
+      
+      
+      
+
   
 
 
@@ -532,23 +556,22 @@
 <p><a href="https://qiita.com/mebiusbox2/items/a61d42878266af969e3c">mkdocsについて</a></p>
 <h2 id="pandoc-markdown">pandoc + Markdown</h2>
 <h3 id="_4">環境構築</h3>
-<p>WSL Ubuntu 18.04 + VSCODE</p>
+<p>Ubuntu 18.04 + VSCODE</p>
 <div class="codehilite" style="background: #000000"><pre style="line-height: 125%"><span></span><span style="color: #cccccc">sudo</span> <span style="color: #cccccc">apt</span> <span style="color: #cdcd00">update</span>
-<span style="color: #cccccc">sudo</span> <span style="color: #cccccc">apt</span> <span style="color: #cccccc">install</span> <span style="color: #3399cc">-</span><span style="color: #cccccc">y</span> <span style="color: #cccccc">pandoc</span> <span style="color: #cccccc">pandoc</span><span style="color: #3399cc">-</span><span style="color: #cccccc">citeproc</span>
 <span style="color: #3399cc">##</span> <span style="color: #cccccc">Tex</span> <span style="color: #cccccc">Packege</span>
 <span style="color: #cccccc">sudo</span> <span style="color: #cccccc">apt</span> <span style="color: #cccccc">install</span> <span style="color: #cccccc">texlive</span><span style="color: #3399cc">-</span><span style="color: #cccccc">luatex</span> <span style="color: #cccccc">texlive</span><span style="color: #3399cc">-</span><span style="color: #cccccc">xetex</span> <span style="color: #cccccc">texlive</span><span style="color: #3399cc">-</span><span style="color: #cccccc">lang</span><span style="color: #3399cc">-</span><span style="color: #cccccc">japanese</span> <span style="color: #3399cc">-</span><span style="color: #cccccc">y</span>
-<span style="color: #cccccc">sudo</span> <span style="color: #cccccc">apt</span> <span style="color: #cccccc">install</span> <span style="color: #cccccc">texlive</span><span style="color: #3399cc">-</span><span style="color: #cccccc">lang</span><span style="color: #3399cc">-</span><span style="color: #cccccc">cjk</span> <span style="color: #cccccc">xdvik</span><span style="color: #3399cc">-</span><span style="color: #cccccc">ja</span> <span style="color: #cccccc">evince</span> <span style="color: #cccccc">texlive</span><span style="color: #3399cc">-</span><span style="color: #cccccc">fonts</span><span style="color: #3399cc">-</span><span style="color: #cccccc">recommended</span> <span style="color: #cccccc">texlive</span><span style="color: #3399cc">-</span><span style="color: #cccccc">fonts</span><span style="color: #3399cc">-</span><span style="color: #cccccc">extra</span> <span style="color: #3399cc">-</span><span style="color: #cccccc">y</span>
+<span style="color: #cccccc">sudo</span> <span style="color: #cccccc">apt</span> <span style="color: #cccccc">install</span> <span style="color: #cccccc">texlive</span><span style="color: #3399cc">-</span><span style="color: #cccccc">lang</span><span style="color: #3399cc">-</span><span style="color: #cccccc">cjk</span>
+<span style="color: #cccccc">xdvik</span><span style="color: #3399cc">-</span><span style="color: #cccccc">ja</span> <span style="color: #cccccc">evince</span> <span style="color: #cccccc">texlive</span><span style="color: #3399cc">-</span><span style="color: #cccccc">fonts</span><span style="color: #3399cc">-</span><span style="color: #cccccc">recommended</span> <span style="color: #cccccc">texlive</span><span style="color: #3399cc">-</span><span style="color: #cccccc">fonts</span><span style="color: #3399cc">-</span><span style="color: #cccccc">extra</span> <span style="color: #cccccc">lmodern</span> <span style="color: #cccccc">texlive</span><span style="color: #3399cc">-</span><span style="color: #cccccc">xetex</span> <span style="color: #3399cc">-</span><span style="color: #cccccc">y</span>
 <span style="color: #3399cc">##</span> <span style="color: #cccccc">Haskell</span>
-<span style="color: #cccccc">sudo</span> <span style="color: #cccccc">apt</span> <span style="color: #cccccc">install</span> <span style="color: #cccccc">haskell</span><span style="color: #3399cc">-</span><span style="color: #cccccc">platform</span> <span style="color: #3399cc">-</span><span style="color: #cccccc">y</span>
-<span style="color: #cccccc">sudo</span> <span style="color: #cccccc">apt</span> <span style="color: #cccccc">install</span> <span style="color: #cccccc">cabal</span><span style="color: #3399cc">-</span><span style="color: #cccccc">install</span> <span style="color: #3399cc">-</span><span style="color: #cccccc">y</span>
-<span style="color: #cccccc">sudo</span> <span style="color: #cccccc">cabal</span> <span style="color: #cdcd00">update</span>
-<span style="color: #cccccc">sudo</span> <span style="color: #cccccc">cabal</span> <span style="color: #cccccc">install</span> <span style="color: #000080">--global pandoc-crossref</span>
-
-<span style="color: #3399cc">##</span> <span style="color: #cccccc">WSLのUbuntu18.</span><span style="color: #cd00cd">04</span><span style="color: #cccccc; border: 1px solid #FF0000">で行うと、フォントがないのか？エラーを吐いて、一向にうまくいかないため、</span><span style="color: #cccccc">Windowsのパス上で行う</span>
-<span style="color: #cccccc">cd</span> <span style="color: #3399cc">/</span><span style="color: #cccccc">mnt</span><span style="color: #3399cc">/</span><span style="color: #cdcd00">c</span>
-<span style="color: #cccccc">mkdir</span> <span style="color: #cccccc">pandoc</span>
-<span style="color: #cccccc">cd</span> <span style="color: #cccccc">pandoc</span>
-<span style="color: #cccccc">code</span> <span style="color: #cccccc">.</span> 
+<span style="color: #cccccc">curl</span> <span style="color: #3399cc">-</span><span style="color: #cccccc">sSL</span> <span style="color: #cccccc">https:</span><span style="color: #3399cc">//</span><span style="color: #cdcd00">get</span><span style="color: #cccccc">.haskellstack.org</span><span style="color: #3399cc">/</span> <span style="color: #3399cc">|</span> <span style="color: #cccccc">sh</span>
+<span style="color: #3399cc">##</span> <span style="color: #cccccc">pandoc</span>
+<span style="color: #cccccc">stack</span> <span style="color: #cccccc">install</span> <span style="color: #cccccc">pandoc</span>
+<span style="color: #cccccc">stack</span> <span style="color: #cccccc">install</span> <span style="color: #cccccc">pandoc</span><span style="color: #3399cc">-</span><span style="color: #cccccc">citeproc</span>
+<span style="color: #3399cc">##</span> <span style="color: #cccccc">pandoc</span><span style="color: #3399cc">-</span><span style="color: #cccccc">crossrefはstack</span> <span style="color: #cccccc">installだとエラーのため以下で行う</span>
+<span style="color: #cccccc">git</span> <span style="color: #cccccc">clone</span> <span style="color: #cccccc">https:</span><span style="color: #3399cc">//</span><span style="color: #cccccc">github.com</span><span style="color: #3399cc">/</span><span style="color: #cccccc">lierdakil</span><span style="color: #3399cc">/</span><span style="color: #cccccc">pandoc</span><span style="color: #3399cc">-</span><span style="color: #cccccc">crossref</span>
+<span style="color: #cccccc">cd</span> <span style="color: #cccccc">pandoc</span><span style="color: #3399cc">-</span><span style="color: #cccccc">crossref</span>
+<span style="color: #cccccc">stack</span> <span style="color: #cccccc">build</span> <span style="color: #000080">--allow-different-user</span>
+<span style="color: #cccccc">stack</span> <span style="color: #cccccc">install</span> <span style="color: #000080">--allow-different-user</span>
 </pre></div>
 
 
@@ -612,7 +635,7 @@
 <span style="color: #00cdcd">bibfiles</span><span style="color: #3399cc">=</span><span style="color: #cdcd00">$(</span>ls -F <span style="color: #cccccc">|</span> grep bib<span style="color: #cdcd00">)</span>
 <span style="color: #cd00cd">echo</span> <span style="color: #cd0000">&#39;bib files: &#39;</span><span style="color: #00cdcd">$bibfiles</span>
 
-<span style="color: #00cdcd">pandoccmdtemplate</span><span style="color: #3399cc">=</span><span style="color: #cd0000">&#39;pandoc --pdf-engine=lualatex --toc -F pandoc-crossref -N -M &quot;crossrefYaml=config.yml&quot;&#39;</span>
+<span style="color: #00cdcd">pandoccmdtemplate</span><span style="color: #3399cc">=</span><span style="color: #cd0000">&#39;pandoc --pdf-engine=lualatex --toc -F pandoc-crossref -N -M &quot;crossrefYaml=config.yml&quot; -V documentclass=ltjarticle&#39;</span>
 <span style="color: #cd00cd">echo</span> <span style="color: #00cdcd">$pandoccmd</span>
 <span style="color: #00cdcd">pandoccmd</span><span style="color: #3399cc">=</span><span style="color: #cd0000">&#39;&#39;</span>
 <span style="color: #cdcd00">for</span> bib in <span style="color: #cd0000">${</span><span style="color: #00cdcd">bibfiles</span><span style="color: #cccccc">[@]</span><span style="color: #cd0000">}</span>
@@ -649,7 +672,11 @@
 </details>
 <h3 id="_6">参考</h3>
 <p><a href="https://qiita.com/Kumassy/items/5b6ae6b99df08fb434d9">https://qiita.com/Kumassy/items/5b6ae6b99df08fb434d9</a>
-<a href="https://qiita.com/SOhtsu/items/e921142372d0f4cce410">https://qiita.com/SOhtsu/items/e921142372d0f4cce410</a></p>
+<a href="https://qiita.com/SOhtsu/items/e921142372d0f4cce410">https://qiita.com/SOhtsu/items/e921142372d0f4cce410</a>
+<a href="http://mickey-happygolucky.hatenablog.com/entry/2016/03/01/234228">http://mickey-happygolucky.hatenablog.com/entry/2016/03/01/234228</a>
+<a href="https://qiita.com/Kenta11/items/5844df1a6a1f5f3ba6d5#pandoc-crossref">https://qiita.com/Kenta11/items/5844df1a6a1f5f3ba6d5#pandoc-crossref</a>
+<a href="https://qiita.com/sky_y/items/3c5c46ebd319490907e8">https://qiita.com/sky_y/items/3c5c46ebd319490907e8</a>
+<a href="https://texwiki.texjp.org/?LuaTeX-ja#v06d4fe0">https://texwiki.texjp.org/?LuaTeX-ja#v06d4fe0</a></p>
                 
                   
                 
@@ -670,7 +697,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../howtowrite/" title="How to write mkdocs" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../k8s/" title="k8s" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -679,7 +706,7 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                How to write mkdocs
+                k8s
               </span>
             </div>
           </a>
