@@ -205,3 +205,99 @@ kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | gre
 
 refs
 [gitlab runner連携](https://qiita.com/khk-h/items/9e7a4a201654b588a493)
+
+## ingress-nginx + metallb
+### install 
+1. ingress-nginx-controller インストール
+`kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/mandatory.yaml`
+2. `curl -L -O https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/provider/cloud-generic.yaml`
+3. loadBalancerIP: <metallbで設定した範囲のアドレス>をspecの下に追記
+4. `kubectl apply -f cloud-generic.yaml`
+
+### ingress nginx test app
+```
+# cat <<EOF > hello-world.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app.kubernetes.io/name: hello
+  name: hello-world
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hello-world
+  template:
+    metadata:
+      labels:
+        app: hello-world
+    spec:
+      containers:
+      - image: gcr.io/hello-minikube-zero-install/hello-node
+        name: hello-world
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-world
+spec:
+  ports:
+  - name: http
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: hello-world
+  type: NodePort
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: hello-router
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /
+        backend:
+          serviceName: hello-world
+          servicePort: 8080
+    host: hello-world.kubernetes.local
+EOF
+```
+
+```
+kubectl apply -f hello-world.yaml
+curl http://hello-world.kubernetes.local
+```
+
+refs:
+* https://blog.web-apps.tech/ingress-nginx-on-prem/
+* https://qiita.com/megasys1968/items/aa94ddfb92f57e08c4dd
+
+## prometheus (ingress nginx)
+* refsを参考に構築したあとに以下をやることで、`http://prometheus.kubernetes.local`でPrometheusが見える
+
+* prometheus-ingress.yaml
+```
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: prometheus-server
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /
+        backend:
+          serviceName: prometheus-service
+          servicePort: 9090
+    host: prometheus.kubernetes.local
+```
+
+refs:
+* https://kubernetes.github.io/ingress-nginx/user-guide/monitoring/
+* https://linuxacademy.com/blog/kubernetes/running-prometheus-on-kubernetes/
