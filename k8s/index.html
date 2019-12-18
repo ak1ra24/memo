@@ -354,6 +354,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ingress-nginx-metallb" class="md-nav__link">
+    ingress-nginx + metallb
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install" class="md-nav__link">
+    install
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ingress-nginx-test-app" class="md-nav__link">
+    ingress nginx test app
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prometheus-ingress-nginx" class="md-nav__link">
+    prometheus (ingress nginx)
+  </a>
+  
+</li>
+      
       
       
       
@@ -461,6 +495,40 @@
         <li class="md-nav__item">
   <a href="#gitlab" class="md-nav__link">
     gitlabとの連携
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ingress-nginx-metallb" class="md-nav__link">
+    ingress-nginx + metallb
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install" class="md-nav__link">
+    install
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ingress-nginx-test-app" class="md-nav__link">
+    ingress nginx test app
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prometheus-ingress-nginx" class="md-nav__link">
+    prometheus (ingress nginx)
   </a>
   
 </li>
@@ -695,6 +763,106 @@ kubectl get secret default-token-xxxxx -o <span style="color: #00cdcd">jsonpath<
 </ol>
 <p>refs
 <a href="https://qiita.com/khk-h/items/9e7a4a201654b588a493">gitlab runner連携</a></p>
+<h2 id="ingress-nginx-metallb">ingress-nginx + metallb</h2>
+<h3 id="install">install</h3>
+<ol>
+<li>ingress-nginx-controller インストール
+<code>kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/mandatory.yaml</code></li>
+<li><code>curl -L -O https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/provider/cloud-generic.yaml</code></li>
+<li>loadBalancerIP: <metallbで設定した範囲のアドレス>をspecの下に追記</li>
+<li><code>kubectl apply -f cloud-generic.yaml</code></li>
+</ol>
+<h3 id="ingress-nginx-test-app">ingress nginx test app</h3>
+<div class="codehilite" style="background: #000000"><pre style="line-height: 125%"><span></span><span style="color: #3399cc">#</span> <span style="color: #cccccc">cat</span> <span style="color: #3399cc">&lt;&lt;</span><span style="color: #cccccc">EOF</span> <span style="color: #3399cc">&gt;</span> <span style="color: #cccccc">hello</span><span style="color: #3399cc">-</span><span style="color: #cccccc">world.yaml</span>
+<span style="color: #cccccc">apiVersion:</span> <span style="color: #cccccc">apps</span><span style="color: #3399cc">/</span><span style="color: #cccccc">v1</span>
+<span style="color: #cccccc">kind:</span> <span style="color: #cccccc">Deployment</span>
+<span style="color: #cccccc">metadata:</span>
+  <span style="color: #cccccc">labels:</span>
+    <span style="color: #cccccc">app.kubernetes.io</span><span style="color: #3399cc">/</span><span style="color: #cccccc">name:</span> <span style="color: #cccccc">hello</span>
+  <span style="color: #cccccc">name:</span> <span style="color: #cccccc">hello</span><span style="color: #3399cc">-</span><span style="color: #cccccc">world</span>
+<span style="color: #cccccc">spec:</span>
+  <span style="color: #cccccc">replicas:</span> <span style="color: #cd00cd">1</span>
+  <span style="color: #cccccc">selector:</span>
+    <span style="color: #cccccc">matchLabels:</span>
+      <span style="color: #cccccc">app:</span> <span style="color: #cccccc">hello</span><span style="color: #3399cc">-</span><span style="color: #cccccc">world</span>
+  <span style="color: #cdcd00">template</span><span style="color: #cccccc">:</span>
+    <span style="color: #cccccc">metadata:</span>
+      <span style="color: #cccccc">labels:</span>
+        <span style="color: #cccccc">app:</span> <span style="color: #cccccc">hello</span><span style="color: #3399cc">-</span><span style="color: #cccccc">world</span>
+    <span style="color: #cccccc">spec:</span>
+      <span style="color: #cccccc">containers:</span>
+      <span style="color: #3399cc">-</span> <span style="color: #cccccc">image:</span> <span style="color: #cccccc">gcr.io</span><span style="color: #3399cc">/</span><span style="color: #cccccc">hello</span><span style="color: #3399cc">-</span><span style="color: #cccccc">minikube</span><span style="color: #3399cc">-</span><span style="color: #cccccc">zero</span><span style="color: #3399cc">-</span><span style="color: #cccccc">install</span><span style="color: #3399cc">/</span><span style="color: #cccccc">hello</span><span style="color: #3399cc">-</span><span style="color: #cccccc">node</span>
+        <span style="color: #cccccc">name:</span> <span style="color: #cccccc">hello</span><span style="color: #3399cc">-</span><span style="color: #cccccc">world</span>
+        <span style="color: #cccccc">ports:</span>
+        <span style="color: #3399cc">-</span> <span style="color: #cccccc">containerPort:</span> <span style="color: #cd00cd">8080</span>
+<span style="color: #000080">---</span>
+<span style="color: #cccccc">apiVersion:</span> <span style="color: #cccccc">v1</span>
+<span style="color: #cccccc">kind:</span> <span style="color: #cccccc">Service</span>
+<span style="color: #cccccc">metadata:</span>
+  <span style="color: #cccccc">name:</span> <span style="color: #cccccc">hello</span><span style="color: #3399cc">-</span><span style="color: #cccccc">world</span>
+<span style="color: #cccccc">spec:</span>
+  <span style="color: #cccccc">ports:</span>
+  <span style="color: #3399cc">-</span> <span style="color: #cccccc">name:</span> <span style="color: #cccccc">http</span>
+    <span style="color: #cccccc">port:</span> <span style="color: #cd00cd">8080</span>
+    <span style="color: #cccccc">protocol:</span> <span style="color: #cccccc">TCP</span>
+    <span style="color: #cccccc">targetPort:</span> <span style="color: #cd00cd">8080</span>
+  <span style="color: #cccccc">selector:</span>
+    <span style="color: #cccccc">app:</span> <span style="color: #cccccc">hello</span><span style="color: #3399cc">-</span><span style="color: #cccccc">world</span>
+  <span style="color: #cdcd00">type</span><span style="color: #cccccc">:</span> <span style="color: #cccccc">NodePort</span>
+<span style="color: #000080">---</span>
+<span style="color: #cccccc">apiVersion:</span> <span style="color: #cccccc">extensions</span><span style="color: #3399cc">/</span><span style="color: #cccccc">v1beta1</span>
+<span style="color: #cccccc">kind:</span> <span style="color: #cccccc">Ingress</span>
+<span style="color: #cccccc">metadata:</span>
+  <span style="color: #cccccc">name:</span> <span style="color: #cccccc">hello</span><span style="color: #3399cc">-</span><span style="color: #cccccc">router</span>
+<span style="color: #cccccc">spec:</span>
+  <span style="color: #cccccc">rules:</span>
+  <span style="color: #3399cc">-</span> <span style="color: #cccccc">http:</span>
+      <span style="color: #cccccc">paths:</span>
+      <span style="color: #3399cc">-</span> <span style="color: #cccccc">path:</span> <span style="color: #3399cc">/</span>
+        <span style="color: #cccccc">backend:</span>
+          <span style="color: #cccccc">serviceName:</span> <span style="color: #cccccc">hello</span><span style="color: #3399cc">-</span><span style="color: #cccccc">world</span>
+          <span style="color: #cccccc">servicePort:</span> <span style="color: #cd00cd">8080</span>
+    <span style="color: #cdcd00">host</span><span style="color: #cccccc">:</span> <span style="color: #cccccc">hello</span><span style="color: #3399cc">-</span><span style="color: #cccccc">world.kubernetes.</span><span style="color: #cdcd00">local</span>
+<span style="color: #cccccc">EOF</span>
+</pre></div>
+
+
+<div class="codehilite" style="background: #000000"><pre style="line-height: 125%"><span></span><span style="color: #cccccc">kubectl</span> <span style="color: #cccccc">apply</span> <span style="color: #3399cc">-</span><span style="color: #cccccc">f</span> <span style="color: #cccccc">hello</span><span style="color: #3399cc">-</span><span style="color: #cccccc">world.yaml</span>
+<span style="color: #cccccc">curl</span> <span style="color: #cccccc">http:</span><span style="color: #3399cc">//</span><span style="color: #cccccc">hello</span><span style="color: #3399cc">-</span><span style="color: #cccccc">world.kubernetes.</span><span style="color: #cdcd00">local</span>
+</pre></div>
+
+
+<p>refs:
+* <a href="https://blog.web-apps.tech/ingress-nginx-on-prem/">https://blog.web-apps.tech/ingress-nginx-on-prem/</a>
+* <a href="https://qiita.com/megasys1968/items/aa94ddfb92f57e08c4dd">https://qiita.com/megasys1968/items/aa94ddfb92f57e08c4dd</a></p>
+<h2 id="prometheus-ingress-nginx">prometheus (ingress nginx)</h2>
+<ul>
+<li>
+<p>refsを参考に構築したあとに以下をやることで、<code>http://prometheus.kubernetes.local</code>でPrometheusが見える</p>
+</li>
+<li>
+<p>prometheus-ingress.yaml</p>
+</li>
+</ul>
+<div class="codehilite" style="background: #000000"><pre style="line-height: 125%"><span></span><span style="color: #cccccc">apiVersion</span><span style="color: #3399cc">:</span> <span style="color: #cccccc">extensions</span><span style="color: #3399cc">/</span><span style="color: #cccccc">v1beta1</span>
+<span style="color: #cccccc">kind</span><span style="color: #3399cc">:</span> <span style="color: #cccccc">Ingress</span>
+<span style="color: #cccccc">metadata</span><span style="color: #3399cc">:</span>
+  <span style="color: #cccccc">name</span><span style="color: #3399cc">:</span> <span style="color: #cccccc">prometheus</span><span style="color: #3399cc">-</span><span style="color: #cccccc">server</span>
+<span style="color: #cccccc">spec</span><span style="color: #3399cc">:</span>
+  <span style="color: #cccccc">rules</span><span style="color: #3399cc">:</span>
+  <span style="color: #3399cc">-</span> <span style="color: #cccccc">http</span><span style="color: #3399cc">:</span>
+      <span style="color: #cccccc">paths</span><span style="color: #3399cc">:</span>
+      <span style="color: #3399cc">-</span> <span style="color: #cccccc">path</span><span style="color: #3399cc">:</span> <span style="color: #3399cc">/</span>
+        <span style="color: #cccccc">backend</span><span style="color: #3399cc">:</span>
+          <span style="color: #cccccc">serviceName</span><span style="color: #3399cc">:</span> <span style="color: #cccccc">prometheus</span><span style="color: #3399cc">-</span><span style="color: #cccccc">service</span>
+          <span style="color: #cccccc">servicePort</span><span style="color: #3399cc">:</span> <span style="color: #cd00cd">9090</span>
+    <span style="color: #cccccc">host</span><span style="color: #3399cc">:</span> <span style="color: #cccccc">prometheus</span><span style="color: #3399cc">.</span><span style="color: #cccccc">kubernetes</span><span style="color: #3399cc">.</span><span style="color: #cccccc">local</span>
+</pre></div>
+
+
+<p>refs:
+* <a href="https://kubernetes.github.io/ingress-nginx/user-guide/monitoring/">https://kubernetes.github.io/ingress-nginx/user-guide/monitoring/</a>
+* <a href="https://linuxacademy.com/blog/kubernetes/running-prometheus-on-kubernetes/">https://linuxacademy.com/blog/kubernetes/running-prometheus-on-kubernetes/</a></p>
                 
                   
                 
