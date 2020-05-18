@@ -29,6 +29,9 @@ iptables -t nat -A PREROUTING  -i ens38 -j DNAT --to-destination 1.1.1.1
 * ip forwarding 有効化
 `net.ipv4.ip_forward = 1`
 
+### VLAN
+`ip link add link eth0 name eth0.10 type vlan id 10`
+
 ### linux bridge
 * Linux Bridge でタグ VLAN を扱うには vlan_filtering を有効にする必要
 `ip link add dev br0 type bridge vlan_filtering 1`
@@ -50,6 +53,8 @@ ip route list vrf vrf-x
 * http://www.ksknet.net/cat13/iptables_1.html
 * https://blog.nhiroki.net/2013/12/06/iptables-linux-router
 * https://qiita.com/Shakapon/items/d29b0af036bf6796feb2
+### VLAN
+* https://access.redhat.com/documentation/ja-jp/red_hat_enterprise_linux/7/html/networking_guide/sec-configure_802_1q_vlan_tagging_using_the_command_line
 ### linux bridge
 * https://blog.amedama.jp/entry/linux-bridge-8021q-vlan
 ### vrf
