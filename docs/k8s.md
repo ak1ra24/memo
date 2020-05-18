@@ -1,7 +1,7 @@
 # k8s
 
 ## k8s install
-**v1.17を使用**
+**v1.15を使用**
 
 ### install k8s dependencies (ansible)
 ```
