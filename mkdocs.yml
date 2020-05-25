@@ -6,6 +6,9 @@ theme:
 pages:
   - 'index.md'
   - 'server.md'
+  - 'elasticbeat.md'
+  - 'vizceral_sflow.md'
+  - 'grafanaloki.md'
   - 'docker.md'
   - 'linux.md'
   - 'terraform.md'
